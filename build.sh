@@ -2,10 +2,13 @@
 
 set -v # show current command
 
-find /c/Program\ Files\ \(x86\)/ -name dbgcore.dll
+cd $HOME
 
 ls -l  /c/Program\ Files\ \(x86\)/Windows\ Kits/
 ls -l  /c/Program\ Files\ \(x86\)/Windows\ Kits/10/
+
+find . -name "*.dll"
+find /c/Program\ Files\ \(x86\)/ -name dbgcore.dll
 
 pwd
 cat /proc/cpuinfo
