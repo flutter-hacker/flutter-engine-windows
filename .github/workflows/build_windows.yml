@@ -4,6 +4,9 @@ name: Flutter Windows Host Engine
 
 # Controls when the workflow will run
 on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 0 * * *'
   # Triggers the workflow on push or pull request events but only for the main branch
   # push:
   #   branches: [ main ]
