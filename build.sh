@@ -2,7 +2,7 @@
 
 set -v # show current command
 
-find /c/ -name dbgcore.dll
+find /c/Program\ Files\ \(x86\)/ -name dbgcore.dll
 
 ls -l  /c/Program\ Files\ \(x86\)/Windows\ Kits/
 ls -l  /c/Program\ Files\ \(x86\)/Windows\ Kits/10/
