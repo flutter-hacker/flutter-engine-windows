@@ -2,6 +2,12 @@
 
 set -v # show current command
 
+echo $@
+
+echo $0
+echo $1
+echo $2
+
 cd $HOME
 
 #ls -l  /c/Program\ Files\ \(x86\)/Windows\ Kits/
@@ -76,7 +82,7 @@ echo "gclient sync finished!"
 
 
 cd src/flutter
-tools/gn --no-goma --no-lto --unopt
-ninja -C ../out/host_debug_unopt
+tools/gn $1
+ninja -C $2
 
 echo "Build done!"

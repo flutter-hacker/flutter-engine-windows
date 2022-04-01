@@ -35,7 +35,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-  build-engine:
+  build-host-engine:
     runs-on: windows-latest
     steps:
       - name: Get number of CPU cores
@@ -45,6 +45,25 @@ jobs:
         uses: actions/checkout@v2
       - uses: ./
         with:
+          gn-params: --no-goma --no-lto --unopt
+          ninja-path: ../out/host_debug_unopt
+          flutter-engine-revision: main
+      - name: Run Goodbye!
+        shell: bash
+        run: echo Goodbye!
+
+  build-x86-engine:
+    runs-on: windows-latest
+    steps:
+      - name: Get number of CPU cores
+        uses: SimenB/github-actions-cpu-cores@v1
+        id: cpu-cores
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: ./
+        with:
+          gn-params: --no-goma --no-prebuilt-dart-sdk --windows --windows-cpu x86
+          ninja-path: ../out/win_debug_x86
           flutter-engine-revision: main
       - name: Run Goodbye!
         shell: bash
