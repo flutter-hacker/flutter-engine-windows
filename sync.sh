@@ -20,8 +20,11 @@ solutions = [
 ]
 EOF
 
-export DEPOT_TOOLS_WIN_TOOLCHAIN=0
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
+set GYP_MSVS_VERSION=2022
+set GYP_MSVS_OVERRIDE_PATH="C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise"
+
+export
 
 gclient sync -D -f
 df -h
