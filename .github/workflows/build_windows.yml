@@ -58,7 +58,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: flutter_engine_windows_x64
-          path: /c/Users/runneradmin/flutter_engine/src/out/
+          path: C:\\Users\\runneradmin\\flutter_engine\\src\\out
       - name: Run Goodbye!
         shell: bash
         run: echo Goodbye!
@@ -79,7 +79,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: flutter_engine_windows_x86
-          path: /c/Users/runneradmin/flutter_engine/src/out/
+          path: C:\\Users\\runneradmin\\flutter_engine\\src\\out
       - name: Run Goodbye!
         shell: bash
         run: echo Goodbye!

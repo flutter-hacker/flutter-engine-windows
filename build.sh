@@ -101,7 +101,11 @@ cd src/flutter
 tools/gn $INPUT_GN_PARAMS
 checkResult
 
+df -h
+
 ninja -C $INPUT_NINJA_PATH
 checkResult
+
+df -h
 
 echo "Build done!"
