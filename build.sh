@@ -97,6 +97,9 @@ df -h
 echo "gclient sync finished!"
 
 cd src/flutter
+git status
+git rev-parse HEAD
+git rev-parse --short HEAD
 
 tools/gn $INPUT_GN_PARAMS
 checkResult
