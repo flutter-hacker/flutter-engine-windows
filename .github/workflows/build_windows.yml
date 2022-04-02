@@ -54,6 +54,10 @@ jobs:
           gn_params: --no-goma --no-lto --unopt
           ninja_path: ../out/host_debug_unopt
           flutter_engine_revision: main
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter_engine_windows_x64
+          path: /c/Users/runneradmin/flutter_engine/src/out/
       - name: Run Goodbye!
         shell: bash
         run: echo Goodbye!
@@ -71,6 +75,10 @@ jobs:
           gn_params: --no-goma --no-prebuilt-dart-sdk --windows --windows-cpu x86
           ninja_path: ../out/win_debug_x86
           flutter_engine_revision: main
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter_engine_windows_x86
+          path: /c/Users/runneradmin/flutter_engine/src/out/
       - name: Run Goodbye!
         shell: bash
         run: echo Goodbye!
