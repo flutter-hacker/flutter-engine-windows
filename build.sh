@@ -10,6 +10,8 @@ function checkResult() {
     fi
 }
 
+pwd
+
 echo ${INPUT_FLUTTER_ENGINE_REVISION}
 echo ${INPUT_GN_PARAMS}
 echo ${INPUT_NINJA_PATH}
@@ -19,8 +21,6 @@ echo $@
 echo $0
 echo $1
 echo $2
-
-cd $HOME
 
 #ls -l  /c/Program\ Files\ \(x86\)/Windows\ Kits/
 #ls -l  /c/Program\ Files\ \(x86\)/Windows\ Kits/10/
@@ -36,8 +36,10 @@ cd $HOME
 
 mkdir -p /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/
 
-cp -r $GITHUB_ACTION_PATH/debugging_tools_dlls/10.0.19041.685/* /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/
+cp -r debugging_tools_dlls/10.0.19041.685/* /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/
 checkResult
+
+cd $HOME
 
 pwd
 cat /proc/cpuinfo
