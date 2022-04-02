@@ -3,6 +3,13 @@
 set -v # show current command
 set -x
 
+function checkResult() {
+    if [ $? -ne 0 ]; then
+        echo "Last command failed, exit."
+        exit $?
+    fi
+}
+
 echo ${INPUT_FLUTTER_ENGINE_REVISION}
 echo ${INPUT_GN_PARAMS}
 echo ${INPUT_NINJA_PATH}
@@ -81,13 +88,18 @@ set GYP_MSVS_OVERRIDE_PATH="C:\\Program Files\\Microsoft Visual Studio\\2022\\En
 export
 
 gclient sync -D -f
+checkResult
+
 df -h
 
 echo "gclient sync finished!"
 
-
 cd src/flutter
+
 tools/gn $INPUT_GN_PARAMS
+checkResult
+
 ninja -C $INPUT_NINJA_PATH
+checkResult
 
 echo "Build done!"
