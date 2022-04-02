@@ -34,10 +34,10 @@ cd $HOME
 #ls -l /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/Shared/Common/VSPerfCollectionTools/vs2022/
 #ls -l /c/Program\ Files\ \(x86\)/Microsoft\ Visual\ Studio/Shared/Common/VSPerfCollectionTools/vs2022/x64/
 
-mkdir -p /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/x64/
+mkdir -p /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/
 
-cp $GITHUB_ACTION_PATH/dbgcore.dll /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/x64/
-cp $GITHUB_ACTION_PATH/dbghelp.dll /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/x64/
+cp -r $GITHUB_ACTION_PATH/debugging_tools_dlls/10.0.19041.685/* /c/Program\ Files\ \(x86\)/Windows\ Kits/10/Debuggers/
+checkResult
 
 pwd
 cat /proc/cpuinfo
