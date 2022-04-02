@@ -5,17 +5,21 @@ branding:
   icon: 'maximize'
   color: 'blue'
 inputs:
-  gn-params:
+  gn_params:
     description: 'The params to run tools/gn command'
     required: false
-  ninja-path:
+  ninja_path:
     description: 'The path to run ninja -C command'
     required: false
-  flutter-engine-revision:
+  flutter_engine_revision:
     description: 'The revision of flutter engine git repo.'
     required: false
 runs:
   using: 'composite'
   steps:
-    - run: $GITHUB_ACTION_PATH/build.sh "${{ inputs.gn-params }}" "${{ inputs.ninja-path }}" "${{ inputs.flutter-engine-revision }}"
+    - run: $GITHUB_ACTION_PATH/build.sh "${{ inputs.gn_params }}" "${{ inputs.ninja_path }}" "${{ inputs.flutter_engine_revision }}"
       shell: bash
+      env:
+        INPUT_GN_PARAMS: ${{ inputs.gn_params }}
+        INPUT_NINJA_PATH: ${{ inputs.ninja_path }}
+        INPUT_FLUTTER_ENGINE_REVISION: ${{ inputs.flutter_engine_revision }}

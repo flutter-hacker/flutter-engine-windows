@@ -1,6 +1,11 @@
 #!/bin/bash
 
 set -v # show current command
+set -x
+
+echo ${INPUT_FLUTTER_ENGINE_REVISION}
+echo ${INPUT_GN_PARAMS}
+echo ${INPUT_NINJA_PATH}
 
 echo $@
 
@@ -82,7 +87,7 @@ echo "gclient sync finished!"
 
 
 cd src/flutter
-tools/gn $1
-ninja -C $2
+tools/gn $INPUT_GN_PARAMS
+ninja -C $INPUT_NINJA_PATH
 
 echo "Build done!"
